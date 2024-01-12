@@ -385,14 +385,12 @@ define gui.nvl_spacing = 3
 
 ## Местоположение, ширина и выравнивание заголовка, показывающего имя говорящего
 ## персонажа.
-# define gui.nvl_name_xpos = 530
 define gui.nvl_name_xpos = 130
 define gui.nvl_name_ypos = 0
 define gui.nvl_name_width = 150
 define gui.nvl_name_xalign = 1.0
 
 ## Местоположение, ширина и выравнивание диалогового текста.
-# define gui.nvl_text_xpos = 570
 define gui.nvl_text_xpos = 40
 define gui.nvl_text_ypos = 40
 define gui.nvl_text_width = 650
