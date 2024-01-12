@@ -3,6 +3,8 @@
 ################################################################################
 
 init offset = -1
+init:
+    $ disable_nvl_button = False
 
 
 ################################################################################
@@ -1298,12 +1300,12 @@ style notify_text:
 
 screen nvl(dialogue, items=None):
 
+
     window:
         style "nvl_window"
         side ("c r"):
             area (1,0, 740, 700)
             viewport id 'scroller':
-                draggable True 
                 mousewheel True 
                 yinitial 1.0
 
@@ -1326,18 +1328,10 @@ screen nvl(dialogue, items=None):
                 ## Показывает меню, если есть. Меню может показываться некорректно, если
                 ## config.narrator_menu установлено на True.
                 for i in items:
-
                     textbutton i.caption:
                         action i.action
                         style "nvl_button"
             vbar value YScrollValue('scroller')
-        button: # the button should be AFTER the frame containing the viewport but on the same level
-            # background None # if you comment out this line you'll see the button and the area it takes up
-            xsize 720 # slightly smaller than the viewport area to make sure you don't click it by accident when fiddling with the scrollbar
-            ysize 700
-            # xpos 0.34
-            # ypos 0.18
-            action Return()
 
     add SideImage() xalign 0.0 yalign 1.0
 
