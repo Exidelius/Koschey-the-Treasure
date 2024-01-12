@@ -914,6 +914,7 @@ screen history():
 
                 $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
                 text what:
+                    justify True
                     substitute False
 
         if not _history_list:
@@ -1327,6 +1328,7 @@ screen nvl(dialogue, items=None):
                 ## config.narrator_menu установлено на True.
                 for i in items:
                     textbutton i.caption:
+                        xsize 640
                         action i.action
                         style "nvl_button"
             vbar value YScrollValue('scroller')
