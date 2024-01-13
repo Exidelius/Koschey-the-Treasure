@@ -247,8 +247,8 @@ screen quick_menu():
         hbox:
             style_prefix "quick"
 
-            xalign 0.5
-            yalign 1.0
+            xalign 0.8
+            yalign 0.9
 
             textbutton _("Назад") action Rollback()
             textbutton _("История") action ShowMenu('history')
@@ -373,7 +373,10 @@ screen main_menu():
             text "[config.name!t]":
                 style "main_menu_title"
 
-            text "[config.version]":
+            # text "[config.version]":
+            #     style "main_menu_version"
+
+            text "Разработано в рамках Капелла Джема":
                 style "main_menu_version"
 
 
@@ -1003,7 +1006,7 @@ screen help():
 screen keyboard_help():
 
     hbox:
-        label _("Войти")
+        label _("Enter")
         text _("Прохождение диалогов, активация интерфейса.")
 
     hbox:
