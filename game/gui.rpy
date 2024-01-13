@@ -15,6 +15,9 @@ init python:
 ## преобразованиях
 define config.check_conflicting_properties = True
 
+define config.mouse = { }
+define config.mouse['default'] = [ ( "images/gui/cursor.png", 0, 60) ]
+
 
 ################################################################################
 ## Конфигурируемые Переменные GUI
@@ -283,6 +286,14 @@ define gui.slot_spacing = 10
 define gui.main_menu_text_xalign = 1.0
 
 
+## Кастомные переменные ###########################################################
+##
+## Эта переменная контролирует позицию персонажа
+
+# define config.tag_transform['Character'] = 
+define config.rollback_enabled = False
+
+
 ## Рамки #######################################################################
 ##
 ## Эти переменные контролируют вид рамок, содержащих компоненты
@@ -369,7 +380,7 @@ define gui.history_text_xalign = 0.0
 
 ## Границы фона окна NVL.
 # define gui.nvl_borders = Borders(0, 10, 0, 20)
-define gui.nvl_borders = Borders(505, 120, 26, 200)
+define gui.nvl_borders = Borders(505, 130, 26, 100)
 
 ## Максимальное число показываемых строк в режиме NVL. Когда количество строчек
 ## начинает превышать это значение, старые строчки очищаются.
@@ -381,31 +392,52 @@ define gui.nvl_height = None
 
 ## Интервал между строчками в режиме NVL, если gui.nvl_height имеет значение
 ## None, а также между строчками и меню режима NVL.
-define gui.nvl_spacing = 3
+define gui.nvl_spacing = 30
 
 ## Местоположение, ширина и выравнивание заголовка, показывающего имя говорящего
 ## персонажа.
-define gui.nvl_name_xpos = 130
+define gui.nvl_name_xpos = 60
 define gui.nvl_name_ypos = 0
 define gui.nvl_name_width = 150
-define gui.nvl_name_xalign = 1.0
+define gui.nvl_name_xalign = 0.0
 
 ## Местоположение, ширина и выравнивание диалогового текста.
-define gui.nvl_text_xpos = 40
+define gui.nvl_text_xpos = 30
 define gui.nvl_text_ypos = 40
 define gui.nvl_text_width = 650
 define gui.nvl_text_xalign = 0.0
 
 ## Местоположение, ширина и выравнивание текста nvl_thought (текст от лица
 ## персонажа nvl_narrator).
-define gui.nvl_thought_xpos = 40
+define gui.nvl_thought_xpos = 30
 define gui.nvl_thought_ypos = 0
-define gui.nvl_thought_width = 660
+define gui.nvl_thought_width = 650
 define gui.nvl_thought_xalign = 0.0
 
 ## Местоположение кнопок меню NVL.
-define gui.nvl_button_xpos = 60
+define gui.nvl_button_xpos = 50
 define gui.nvl_button_xalign = 0.0
+
+
+## Позиция персонажа #################################################################
+
+transform default_transform(old, new):
+    ypos 0.075
+    xpos 0.05
+    contains:
+        old
+        ypos 0.075
+        xpos 0.05
+    contains:
+        new
+        ypos 0.075
+        xpos 0.05
+
+define config.side_image_same_transform = default_transform
+define config.side_image_change_transform = default_transform
+define config.tag_transform['Character'] = default_transform
+
+define config.side_image_only_not_showing = False
 
 
 ## Локализация #################################################################
