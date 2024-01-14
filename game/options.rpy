@@ -7,7 +7,7 @@
 
 ## Изменения ###################################################################
 
-define config.skip_delay = 50
+define config.skip_delay = 25
 
 
 ## Основное ####################################################################
@@ -28,13 +28,45 @@ define gui.show_name = True
 
 ## Версия игры.
 
-define config.version = "1.0"
+define config.version = "0.8"
 
 
 ## Текст, помещённый в экран "Об игре". Поместите текст между тройными скобками.
 ## Для отделения абзацев оставляйте между ними пустую строку.
 
 define gui.about = _p("""
+Игра разработана в рамках Капелла Джем.
+
+
+В реализации проекта были использованы нейросети!
+
+
+Разработчики: 
+
+Тимлид, Художник: PlantAIR
+
+Сценарист, Художественный координатор: cherry_lev
+
+Программист: Михаил Степанов
+
+Редактор: Вера Кот
+
+
+Шрифты:
+
+Ponomar Unicode - Copyright 2011-2016 Aleksandr Andreev, Yuri Shardt and Nikita Simmons
+
+
+Музыка:
+
+Relaxing Green Nature, David Feslyian - Copyright 2021 Fesliyan Studios
+
+
+Нейросеть:
+
+Stable Diffusion Online
+
+
 """)
 
 
