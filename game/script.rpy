@@ -56,8 +56,6 @@ label start:
     call transition(text='СОКРОВИЩЕ ТЁМНОГО СЕРДЦА', size=40, color=gui.accent_color)
 
     $ start_transition = False
-
-    # TODO добавить описание в "Об игре" (Добавить шрифт и описание из обсуждения)
     
     scene background_image
     show frame
