@@ -74,7 +74,7 @@ Stable Diffusion Online
 ## постройке дистрибутивов. Оно должно содержать текст формата ASCII и не должно
 ## содержать пробелы, двоеточия и точки с запятой.
 
-define build.name = "Koschey the Treasure"
+define build.name = "Koschey_the_Treasure"
 
 
 ## Звуки и музыка ##############################################################

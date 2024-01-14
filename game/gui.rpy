@@ -398,7 +398,7 @@ define gui.nvl_spacing = 30
 ## персонажа.
 define gui.nvl_name_xpos = 60
 define gui.nvl_name_ypos = 0
-define gui.nvl_name_width = 150
+define gui.nvl_name_width = 400
 define gui.nvl_name_xalign = 0.0
 
 ## Местоположение, ширина и выравнивание диалогового текста.
@@ -417,24 +417,6 @@ define gui.nvl_thought_xalign = 0.0
 ## Местоположение кнопок меню NVL.
 define gui.nvl_button_xpos = 50
 define gui.nvl_button_xalign = 0.0
-
-
-## Позиция персонажа #################################################################
-
-transform default_transform(old, new):
-    contains:
-        old
-        ypos 0.075
-        xpos 0.05
-    contains:
-        new
-        ypos 0.075
-        xpos 0.05
-
-define config.side_image_same_transform = default_transform
-define config.side_image_change_transform = default_transform
-
-define config.side_image_only_not_showing = False
 
 
 ## Локализация #################################################################

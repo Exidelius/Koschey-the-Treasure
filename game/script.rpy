@@ -16,7 +16,8 @@ define background = '2020-02-22_-_Relaxing_Green_Nature_-_David_Fesliyan.mp3'
 
 
 # Изображения персонажей
-image side vasilisa = 'wip.png'
+image side vasilisa = 'vasilisa_first.png'
+image side vasilisa_second = 'vasilisa_second.png'
 
 
 init:
@@ -54,7 +55,7 @@ label start:
 
     # TODO добавить описание в "Об игре" (Добавить шрифт и описание из обсуждения)
     
-    scene test
+    scene background_image
     show frame
 
     $ quick_menu = True
@@ -149,6 +150,8 @@ label start:
 
     'И выполнила царевна условие Яги, да опустила левую руку по запястье в печь, - не был огонь в печи горячим вовсе, а был холодным, как лёд.
     Видит Василиса, что не пламя это, а ручища, что тянутся к ней, да так много их, что и не видно, откуда они поднимаются.'
+
+    $ mc = Character('Василиса', image='vasilisa_second', color='#38977c', kind=nvl, what_prefix = '   {cps=95}"', what_suffix='"')
     
     'Вытащила Василиса руку, да глядит, что точь в точь она костяная, прям как нога у Яги, но присмотрелась царевна - и не костяная вовсе, а серебром блестит, словно изготовлена самым лучшим кузнецом.'
 
@@ -614,5 +617,8 @@ label v3:
 
 label end_credits:
     $ quick_menu = False
+    # hide scene background_image
+    scene black
+
     show screen credits with dissolve
     pause
