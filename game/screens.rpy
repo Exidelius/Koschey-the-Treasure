@@ -57,8 +57,8 @@ style scrollbar:
 
 style vscrollbar:
     xsize gui.scrollbar_size
-    base_bar Frame("gui/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    # base_bar Frame("gui/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    # thumb Frame("gui/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
 
 style slider:
     ysize gui.slider_size
@@ -360,6 +360,7 @@ screen main_menu():
     ## Эта пустая рамка затеняет главное меню.
     frame:
         style "main_menu_frame"
+        xalign 0.0
 
     ## Оператор use включает отображение другого экрана в данном. Актуальное
     ## содержание главного меню находится на экране навигации.
@@ -368,16 +369,21 @@ screen main_menu():
     if gui.show_name:
 
         vbox:
+            xalign 0.05
             style "main_menu_vbox"
 
-            text "[config.name!t]":
-                style "main_menu_title"
+            # text "[config.name!t]":
+                # style "main_menu_title"
 
-            # text "[config.version]":
-            #     style "main_menu_version"
+            text "Версия [config.version]":
+                style "main_menu_version"
+                xalign 0.0
+                xsize 200
 
             text "Разработано в рамках Капелла Джема":
                 style "main_menu_version"
+                xalign 0.0
+                xsize 200
 
 
 style main_menu_frame is empty
@@ -407,6 +413,63 @@ style main_menu_title:
 
 style main_menu_version:
     properties gui.text_properties("version")
+
+
+## Экран титров ################################################################
+
+screen credits():
+    vbox:
+        xalign 0.5
+        yalign 0.5
+        spacing 15
+
+        hbox:
+            # size 40
+            xalign 0.5
+            label Text("Сокровище тёмного сердца", size=50, color=gui.accent_color) xalign 0.5
+
+        vbox:
+            xalign 0.5
+            label _("Человек-оркестр, Художник, Тимлид, Миллиардер, Филантроп") xalign 0.5
+            text _("PlantAIR") xalign 0.5
+
+        vbox:
+            xalign 0.5
+            label _("Сценарист и Художественный координатор") xalign 0.5
+            text _("cherry_lev") xalign 0.5
+            
+        vbox:
+            xalign 0.5
+            label _("Человек без ноута, Кодер (А почему я без ноута)") xalign 0.5
+            text _("Михаил Степанов") xalign 0.5
+
+        vbox:
+            xalign 0.5
+            label _("Человек без фантазии, Редактор") xalign 0.5
+            text _("Вера Кот") xalign 0.5
+
+        vbox:
+            xalign 0.5
+            # xoffset 20
+            label Text("Спасибо, что прошли нашу игру!", size=30, color=gui.accent_color) xalign 0.5
+
+
+# Экран переходов в начале игры ################################################
+
+screen start_transition(text, text_label, xalign=0.5, size=30, color=gui.selected_color):
+    if start_transition:
+        vbox:
+            xalign 0.5
+            yalign 0.5
+
+            vbox:
+                xsize 600
+                
+                label Text(text, size=size, color=color) xalign xalign
+                if text_label:
+                    label Text(text_label, size=size, color=gui.accent_color) xalign 1.0
+
+default start_transition = True
 
 
 ## Экран игрового меню #########################################################
@@ -1306,7 +1369,7 @@ screen nvl(dialogue, items=None):
     window:
         style "nvl_window"
         side ("c r"):
-            area (1,0, 740, 700)
+            area (1, 0, 744, 700)
             viewport id 'scroller':
                 mousewheel True 
                 yinitial 1.0
@@ -1340,12 +1403,13 @@ screen nvl(dialogue, items=None):
 
 
 screen nvl_dialogue(dialogue):
+
+
     for d in dialogue:
 
         window:
             id d.window_id
 
-            ## Было изначально
             fixed:
                 yfit gui.nvl_height is None
 
@@ -1356,6 +1420,7 @@ screen nvl_dialogue(dialogue):
 
                 text d.what:
                     id d.what_id
+
 
 
 ## Это контролирует максимальное число строк NVL, могущих показываться за раз.
