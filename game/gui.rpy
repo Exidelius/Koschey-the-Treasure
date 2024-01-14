@@ -29,7 +29,7 @@ define config.mouse['default'] = [ ( "images/gui/cursor.png", 0, 60) ]
 ## Цвета текста в интерфейсе.
 
 ## Акцентный цвет используется в заголовках и подчёркнутых текстах.
-define gui.accent_color = '#00cc99'
+define gui.accent_color = '#c2a94f'
 
 ## Цвет, используемый в текстовой кнопке, когда она не выбрана и не наведена.
 define gui.idle_color = '#888888'
@@ -39,7 +39,7 @@ define gui.idle_color = '#888888'
 define gui.idle_small_color = '#aaaaaa'
 
 ## Цвет, используемых в кнопках и панелях, когда они наведены.
-define gui.hover_color = '#66e0c1'
+define gui.hover_color = '#e8e0ae'
 
 ## Цвет, используемый текстовой кнопкой, когда она выбрана, но не наведена.
 ## Кнопка может быть выбрана, если это текущий экран или текущее значение
@@ -51,8 +51,8 @@ define gui.insensitive_color = '#8888887f'
 
 ## Цвета, используемые для частей панелей, которые не заполняются. Они
 ## используются не напрямую, а только при воссоздании файлов изображений.
-define gui.muted_color = '#00513d'
-define gui.hover_muted_color = '#007a5b'
+define gui.muted_color = '#959462'
+define gui.hover_muted_color = '#abab95'
 
 ## Цвета, используемые в тексте диалогов и выборов.
 define gui.text_color = '#ffffff'
@@ -325,7 +325,7 @@ define gui.frame_tile = False
 ## Высота горизонтальных панелей, полос прокрутки и ползунков. Ширина
 ## вертикальных панелей, полос прокрутки и ползунков.
 define gui.bar_size = 25
-define gui.scrollbar_size = 12
+define gui.scrollbar_size = 10
 define gui.slider_size = 25
 
 ## True, если изображения панелей должны моститься. False, если они должны быть
@@ -380,7 +380,7 @@ define gui.history_text_xalign = 0.0
 
 ## Границы фона окна NVL.
 # define gui.nvl_borders = Borders(0, 10, 0, 20)
-define gui.nvl_borders = Borders(505, 130, 26, 100)
+define gui.nvl_borders = Borders(505, 130, 26, 89)
 
 ## Максимальное число показываемых строк в режиме NVL. Когда количество строчек
 ## начинает превышать это значение, старые строчки очищаются.
@@ -422,8 +422,6 @@ define gui.nvl_button_xalign = 0.0
 ## Позиция персонажа #################################################################
 
 transform default_transform(old, new):
-    ypos 0.075
-    xpos 0.05
     contains:
         old
         ypos 0.075
@@ -435,7 +433,6 @@ transform default_transform(old, new):
 
 define config.side_image_same_transform = default_transform
 define config.side_image_change_transform = default_transform
-define config.tag_transform['Character'] = default_transform
 
 define config.side_image_only_not_showing = False
 
