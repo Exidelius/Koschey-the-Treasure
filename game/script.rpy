@@ -5,10 +5,10 @@ define narrator = nvl_narrator
 
 # Определение персонажей игры.
 define mc = Character('Василиса', image='vasilisa', color='#38977c', kind=nvl, what_prefix = '   {cps=95}"', what_suffix='"')
-define koschey = Character('Кощей Бессмертный', color='#ED8F33', kind=nvl, what_prefix = '   {cps=95}"', what_suffix='"')
-define yaga = Character('Баба Яга', color='#b03636', kind=nvl, what_prefix = '   {cps=80}"', what_suffix='"')
-define likho = Character('Лихо Лесное', color='#5F990C', kind=nvl, what_prefix = '   {cps=120}"', what_suffix='"')
-define snake = Character('Заколдованная', color='#9466BF', kind=nvl, what_prefix = '   {cps=65}"', what_suffix='"')
+define koschey = Character('Кощей Бессмертный', image='koschey_image', color='#ED8F33', kind=nvl, what_prefix = '   {cps=95}"', what_suffix='"')
+define yaga = Character('Баба Яга', image='yaga_image', color='#b03636', kind=nvl, what_prefix = '   {cps=80}"', what_suffix='"')
+define likho = Character('Лихо Лесное', image='likho_image', color='#5F990C', kind=nvl, what_prefix = '   {cps=120}"', what_suffix='"')
+define snake = Character('Заколдованная', image='snake_image', color='#9466BF', kind=nvl, what_prefix = '   {cps=65}"', what_suffix='"')
 
 
 # Звуки
@@ -18,6 +18,10 @@ define background = '2020-02-22_-_Relaxing_Green_Nature_-_David_Fesliyan.mp3'
 # Изображения персонажей
 image side vasilisa = 'vasilisa_first.png'
 image side vasilisa_second = 'vasilisa_second.png'
+image side koschey_image = 'koschey.png'
+image side yaga_image = 'yaga.png'
+image side likho_image = 'likho.png'
+image side snake_image = 'snake.png'
 
 
 init:
